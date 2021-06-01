@@ -5,22 +5,25 @@ var cors = require('cors')
 app.use(express.json());
 app.use(cors())
 
-
 app.get('/getMatches', async (req, res) => 
 {
     try 
     {
         id = req.query.id;
 
-        axios.get(`https://codubee-projects-api.herokuapp.com/tvTroubles/getUserMatches?id=${id}`).then((response) => 
+        axios.get(`https://codubee-projects-api.herokuapp.com/tvTroubles/getUserMatches?id=${id}`)
+        .then((response) => 
         {
             data = response.data;
             res.status(200).json(data);
-        });
+        })
+        .catch(function (err) {
+            res.status(404).json(err.response.data);
+        })
     } 
     catch (err) 
     {
-        res.status(400).json(err);
+        res.status(404).json(err);
     }
 })
 
