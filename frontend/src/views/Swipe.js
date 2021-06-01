@@ -14,7 +14,7 @@ class Swipe extends React.Component {
         return (
             <Container>
                 <Description />
-                <div class="text-center">
+                <div className="text-center">
                     <Button color="success" onClick={this.submit} >Yes</Button>
                     <Button color="danger" onClick={this.submit} className="ml-sm">No</Button>
                 </div>
