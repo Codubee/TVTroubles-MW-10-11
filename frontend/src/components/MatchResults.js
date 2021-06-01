@@ -65,7 +65,6 @@ class MatchResults extends Component
                     <Collapse isOpen={this.state.isOpen}>
                         <Row>
                             {
-                                this.state.matches > 0 &&
                                 this.state.matches.map((item, val) => 
                                 {
                                     val += 1;
@@ -74,7 +73,7 @@ class MatchResults extends Component
                                             <Card key={val} className="match-results-card">
                                                 <CardHeader>
                                                     <div>
-                                                        {item.name}
+                                                        {item.title}
                                                     </div>
                                                     <span>
                                                         <AiFillStar />

@@ -24,7 +24,8 @@ class Swipe extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({userId: Math.floor(Math.random()*500)})
+        var UID = sessionStorage.getItem("UID");
+        this.setState({userId: UID})
         axios.get('/getDescription')
         .then((response) => {
             console.log(response);
