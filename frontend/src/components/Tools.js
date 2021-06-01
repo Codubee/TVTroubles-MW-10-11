@@ -12,12 +12,12 @@ function Tools() {
   return (
       <Container >
         <Row >
-          <Col sm="12" md="4" ><img src={react}   fluid alt=""/> </Col>
-          <Col sm="12" md="4" ><img src={aws}   fluid alt=""/></Col>
-          <Col sm="12" md="4" > <img src={heroku}   fluid alt=""/> </Col>
-          <Col sm="12" md="4" > <img src={jira}   fluid alt=""/> </Col>
-          <Col sm="12" md="4" > <img src={nodejs}   fluid alt=""/> </Col>
-          <Col sm="12" md="4" > <img src={postman}   fluid alt=""/></Col>
+          <Col sm="12" md="4" ><img src={react}  alt=""/> </Col>
+          <Col sm="12" md="4" ><img src={aws}   alt=""/></Col>
+          <Col sm="12" md="4" > <img src={heroku}   alt=""/> </Col>
+          <Col sm="12" md="4" > <img src={jira}   alt=""/> </Col>
+          <Col sm="12" md="4" > <img src={nodejs}    alt=""/> </Col>
+          <Col sm="12" md="4" > <img src={postman}   alt=""/></Col>
         </Row>
       </Container>
   );

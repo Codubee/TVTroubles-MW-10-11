@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 const axios = require('axios');
-
+var cors = require('cors')
 app.use(express.json());
+app.use(cors())
 
 app.get('/getMatches', async (req, res) => 
 {
@@ -57,4 +58,18 @@ app.get('/getDescription', function (req, res) {
     })
 })
 
-app.listen(8080, () => console.log('Listening at localhost:8080'))
+app.get('/getPreview', function (req, res) {
+
+    var name = req.query.name
+    axios.get('https://codubee-projects-api.herokuapp.com/tvTroubles/getPreview?name='+name)
+    .then(function (response) {
+        res.status(200).json(response.data);
+    })
+    .catch(function (error) {
+        console.log(error)
+        res.status(400).json({error:"An error occurred"});
+    })
+})
+
+
+app.listen(process.env.PORT || 8080, () => console.log('Listening at localhost:8080'))
